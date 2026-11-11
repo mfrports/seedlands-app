@@ -54,11 +54,14 @@
   }, { threshold: 0.3 });
   clips.forEach(v => watching.observe(v));
 
-  // The world behind the first screen: wide or tall as the window is, played once. It ends
-  // on the land at rest and stays there. Where it can't play, that last picture comes up instead.
+  // The reel beside the first screen's words, wide or tall as its place is. It goes round while it is seen (its
+  // last picture is its first, the calm sea, so the turn doesn't show). Where it can't play, one of its pictures
+  // stands there instead.
   const world = d.querySelector('.world video');
   if (world) {
-    const tall = innerHeight > innerWidth * 1.05, hold = world.parentElement;
+    // Its place is upright beside the words in an upright window, and lies across a phone's, where a smaller cut will do.
+    const hold = world.parentElement, place = hold.getBoundingClientRect(), tall = place.height > place.width * 1.05;
+    const cut = tall ? world.dataset.tall : place.width <= 520 ? world.dataset.small : world.dataset.wide;
     const still = () => {
       const img = new Image();
       img.onload = () => { hold.style.setProperty('--still', 'url(' + img.src + ')'); hold.classList.add('still'); };
@@ -66,12 +69,14 @@
     };
     if (calm.matches) still();
     else {
+      const run = () => { const p = world.play(); if (p) p.catch(still); };
       world.muted = true;
+      world.loop = true;
       world.addEventListener('playing', () => world.classList.add('on'), { once: true });
       world.addEventListener('error', still, { once: true });
-      world.src = tall ? world.dataset.tall : world.dataset.wide;
-      const p = world.play();
-      if (p) p.catch(still);
+      world.src = cut;
+      if (sees) new Watch(entries => { for (const e of entries) { if (e.isIntersecting) run(); else world.pause(); } }, { threshold: 0.05 }).observe(hold);
+      else run();
     }
   }
 

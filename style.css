@@ -96,23 +96,27 @@ html:not(.js) .phone video { display: none; }
 .js .phone.rise { transform: translateY(54px) scale(0.965); }
 .js .phone.rise.in { transform: none; }
 
-/* Over the sea: the first screen. It opens as the app does: a calm sea, and the land comes up. */
+/* The first screen. The words stand on stone at the left. Beside them runs a reel of the app's own shots, without
+   its controls: the calm sea and the land coming up, down to a buried city in x-ray, a glide past peaks and blossom,
+   a mansion, the dive into the Nether, and back to the sea. The stone takes it back at its left edge and at its foot, so no word lies
+   on the map and nothing of the map lies behind a key. */
 .hero { position: relative; isolation: isolate; overflow: hidden; margin-top: -68px; min-height: min(100svh, 1000px); display: grid; align-items: end;
-        padding: 150px 0 clamp(56px, 9vh, 104px); background: var(--sea); }
-.world { position: absolute; inset: 0; z-index: -1; background: var(--sea) center / cover no-repeat; }
+        padding: 150px 0 clamp(56px, 9vh, 104px); background: var(--stone); }
+.world { position: absolute; top: 0; bottom: 0; right: 0; width: 68%; z-index: -1; background: var(--sea) center / cover no-repeat;
+         /* Where the words end, measured from the reel's left edge: the stone has most of the reel back by there. */
+         --edge: calc(max(0px, (100vw - 1180px) / 2) + 24px + clamp(540px, 51vw, 620px) - 32vw); --fade: linear-gradient(90deg, transparent calc(var(--edge) - 300px), rgba(0, 0, 0, 0.3) var(--edge), #000 calc(var(--edge) + 250px));
+         -webkit-mask-image: var(--fade); mask-image: var(--fade); }
 .world video { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.9s ease; }
-/* Where the clip can't play (no script, motion not wanted, a phone saving power), the land at rest comes up as a picture. */
+/* Where the reel can't play (no script, motion not wanted, a phone saving power), one of its pictures stands there. */
 .world::before { content: ""; position: absolute; inset: 0; background: center / cover no-repeat; opacity: 0; transition: opacity 0.9s ease; }
 .world.still::before { background-image: var(--still); opacity: 1; }
 html:not(.js) .world::before { background-image: url(img/world-wide.jpg); opacity: 1; }
 .world video.on { opacity: 1; }
 .world::after { content: ""; position: absolute; inset: 0; z-index: 2;
-                background: linear-gradient(90deg, rgba(6, 18, 28, 0.84), rgba(6, 18, 28, 0.5) 40%, rgba(6, 18, 28, 0) 72%),
-                            linear-gradient(rgba(12, 11, 13, 0.35), rgba(12, 11, 13, 0) 22%, rgba(12, 11, 13, 0) 58%, rgba(12, 11, 13, 0.72) 86%, var(--stone)); }
+                background: linear-gradient(rgba(12, 11, 13, 0.5), rgba(12, 11, 13, 0) 20%, rgba(12, 11, 13, 0) 66%, rgba(12, 11, 13, 0.7) 90%, var(--stone)); }
 .hero .wrap { width: 100%; }
 .hero .copy { max-width: 40em; }
 .hero h1 .line { display: block; }
-.hero h1 { text-shadow: 0 2px 30px rgba(6, 18, 28, 0.45); }
 .hero .lead { font-size: clamp(18px, 1.7vw, 21px); line-height: 1.55; max-width: 31em; margin-top: 26px; color: rgba(246, 241, 231, 0.88); }
 .hero .over { color: rgba(246, 241, 231, 0.9); margin-bottom: 22px; }
 .hero .keys { margin-top: 34px; }
@@ -260,7 +264,6 @@ pre { white-space: pre-wrap; font: 12.5px/1.5 var(--mono); color: var(--dim); ba
 @media (max-width: 760px) {
   :root { --pw: min(68vw, 300px); }
   .bar nav a.wide { display: none; }
-  .hero { padding: 120px 0 44px; min-height: 100svh; }
   .hero .wrap, .feature .wrap, .feature.flip .wrap, .modtop .wrap { grid-template-columns: minmax(0, 1fr); justify-items: center; }
   .hero .copy, .feature .copy, .modtop .copy { justify-self: start; }
   .modtop { padding-top: 120px; }
@@ -272,16 +275,17 @@ pre { white-space: pre-wrap; font: 12.5px/1.5 var(--mono); color: var(--dim); ba
   .pair::-webkit-scrollbar { display: none; }
   .pair .phone { --pw: min(64vw, 290px); margin-top: 0; scroll-snap-align: center; }
   .pair .phone:last-child { margin-top: 0; }
-  html:not(.js) .world::before { background-image: url(img/world-tall.jpg); }
-  /* An upright window has the words over the middle of the land (snow, blossom): the dark ground comes up
-     behind them from where they begin, whatever the window's height, and the land stays clear above. */
-  .world::after { background: linear-gradient(rgba(12, 11, 13, 0.4), rgba(12, 11, 13, 0) 20%, rgba(12, 11, 13, 0) 78%, var(--stone)); }
-  .hero .copy { position: relative; }
-  .hero .copy::before { content: ""; position: absolute; z-index: -1; pointer-events: none; left: -24px; width: 100vw; top: -120px; bottom: calc(-1 * clamp(56px, 9vh, 104px));
-                        background: linear-gradient(rgba(10, 12, 16, 0), rgba(10, 12, 16, 0.52) 84px, rgba(10, 12, 16, 0.7) 140px, rgba(10, 12, 16, 0.8) 55%, rgba(10, 12, 16, 0.92) 82%, var(--stone)); }
   .cards { grid-template-columns: minmax(0, 1fr); }
   .keys .key { flex: 1 1 auto; }
   .strata::after, .strata .eye { left: 78%; }
+}
+/* A window too narrow for words and reel side by side (a phone, a tablet held upright; not a phone on its side,
+   which is wide and low) has the reel over the words: it lies across the top of the first screen, as high as the
+   words leave room, and the stone takes it back downwards before they begin. */
+@media (max-width: 760px), (max-width: 1000px) and (orientation: portrait) {
+  .hero { --reel: min(74vw, 42svh); padding: calc(var(--reel) + 18px) 0 44px; min-height: 0; align-items: start; }
+  .world { --fade: linear-gradient(#000 58%, rgba(0, 0, 0, 0.22) 86%, transparent); bottom: auto; left: 0; width: auto; height: calc(var(--reel) + 44px); }
+  .world::after { background: linear-gradient(rgba(12, 11, 13, 0.5), rgba(12, 11, 13, 0) 30%); }
 }
 @media (max-width: 420px) { .brand span { display: none; } .over { font-size: 11.5px; letter-spacing: 0.13em; } }
 
