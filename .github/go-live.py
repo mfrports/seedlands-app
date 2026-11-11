@@ -1,13 +1,16 @@
-"""Turns the site's "Coming to the App Store" key into the real one, once the app is there.
+"""Turns the site's "Coming to the App Store" keys into the real ones, once the app is there.
 
 Run every hour by .github/workflows/go-live.yml. It asks Apple's public lookup whether the
 app is on the store in any of a few countries; until then it changes nothing. When it is,
-the key on the home page gets its light and its words, and the workflow switches itself off.
+the key gets its light and its words on every page that carries it (the home page has it
+twice, the mod's page once), and the workflow switches itself off.
+
+A page keeps working with this only while its key is written exactly as SOON below.
 """
-import json, os, urllib.request
+import glob, json, os, urllib.request
 
 APP = os.environ.get("APP_ID", "6832922834")
-PAGE = os.environ.get("PAGE", "index.html")
+PAGES = sorted(glob.glob(os.environ.get("PAGES", "*.html")))
 SOON = '<a class="key soon" href="https://apps.apple.com/app/id6832922834">Coming to the App Store</a>'
 LIVE = '<a class="key" href="https://apps.apple.com/app/id6832922834">Get Seedlands on the App Store</a>'
 
@@ -29,12 +32,15 @@ def tell(**outputs):
         if path:
             with open(path, "a") as f: f.write(f"{key}={value}\n")
 
-page = open(PAGE, encoding="utf-8").read()
-if SOON not in page:
-    print("the key already leads to the store")
+waiting = [p for p in PAGES if SOON in open(p, encoding="utf-8").read()]
+if not waiting:
+    print("the keys already lead to the store")
     tell(changed="false", done="true")
 elif on_the_store():
-    open(PAGE, "w", encoding="utf-8").write(page.replace(SOON, LIVE))
+    for p in waiting:
+        page = open(p, encoding="utf-8").read()
+        open(p, "w", encoding="utf-8").write(page.replace(SOON, LIVE))
+        print("changed", p)
     tell(changed="true", done="true")
 else:
     print("not on the store yet")

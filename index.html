@@ -2,37 +2,208 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Seedlands – the 3D seed map for Minecraft</title>
 <meta name="description" content="See any Minecraft seed as a living 3D map on iPhone and iPad: find villages, strongholds and ancient cities, x-ray what is buried, chart the Nether, and let the map follow you live.">
 <meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0c0b0d">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Seedlands – the 3D seed map for Minecraft">
+<meta property="og:description" content="Any seed, mapped in 3D. Find any structure, x-ray what is buried, dive into the Nether, and let the map follow you while you play.">
+<meta property="og:image" content="https://mfrports.github.io/seedlands-app/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/icon.png">
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.className="js";setTimeout(function(){if(!window.seedlands)document.documentElement.className=""},2500)</script>
+<script src="site.js" defer></script>
 </head>
 <body>
-<div class="wrap wide"><header class="bar"><a class="brand" href="./"><img src="img/icon.png" alt="">Seedlands</a><nav><a href="support.html">Support</a><a href="privacy.html">Privacy</a></nav></header></div>
-<main class="wrap wide">
-<section class="hero">
-<p class="over">The 3D seed map for Minecraft</p>
-<h1 style="margin-top:18px">Any seed. <em>Mapped in 3D.</em></h1>
-<p class="lead">Type a seed and its whole world rises in front of you. Fly over continents, drop down to single blocks, and find every village, stronghold and ancient city before you set foot in it.</p>
+<header class="top"><div class="bar slab">
+<a class="brand" href="./"><img src="img/icon.png" alt="" width="34" height="34"><span>Seedlands</span></a>
+<nav><a class="wide" href="#map">Features</a><a class="wide" href="#live">Live mode</a><a href="support.html">Support</a><a class="key small" href="mod.html">Get the mod</a></nav>
+</div></header>
+
+<main>
+<section class="hero" id="top">
+<div class="world" aria-hidden="true"><video data-wide="video/world-wide.mp4" data-tall="video/world-tall.mp4" muted playsinline preload="none"></video></div>
+<div class="wrap"><div class="copy">
+<p class="over rise"><i class="cube" style="--c:var(--moss)"></i>The 3D seed map for Minecraft</p>
+<h1><span class="line rise" style="--i:1">Any seed.</span> <span class="line rise torch" style="--i:2">Mapped in 3D.</span></h1>
+<p class="lead rise" style="--i:3">Type a seed and its whole world rises in front of you. Fly over continents, drop down to single blocks, and find every village, stronghold and ancient city before you set foot in it.</p>
+<div class="keys rise" style="--i:4">
 <a class="key soon" href="https://apps.apple.com/app/id6832922834">Coming to the App Store</a>
-<p style="font-size:14px;margin-top:16px">iPhone and iPad · Java and Bedrock · every version from 1.18 to today</p>
+<a class="key stone" href="mod.html"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10m0 0 4-4m-4 4-4-4M4 16.5h12"/></svg>Get the mod for live mode</a>
+</div>
+<p class="fine rise" style="--i:5">iPhone and iPad · Java and Bedrock · every version from 1.18 to today</p>
+</div></div>
 </section>
-<section class="shots">
-<img src="img/shot-01.jpg" alt="A cherry grove under snowy peaks, seen in 3D" width="1320" height="2868">
-<img src="img/shot-02.jpg" alt="The Places panel: every kind of structure, with the nearest one a tap away" width="1320" height="2868">
-<img src="img/shot-03.jpg" alt="A Nether fortress over a sea of lava" width="1320" height="2868">
-<img src="img/shot-04.jpg" alt="An ancient city shown as an x-ray through the ground" width="1320" height="2868">
-<img src="img/shot-05.jpg" alt="A woodland mansion, built block for block" width="1320" height="2868">
-<img src="img/shot-06.jpg" alt="The map following the player live" width="1320" height="2868">
-</section>
-<section class="grid">
-<div class="card"><h3>Find any structure</h3><p>Villages, temples, mansions, monuments, strongholds, ancient cities, trial chambers and more. One tap flies you to the nearest.</p></div>
-<div class="card"><h3>Built like the game builds them</h3><p>Real 3D models, block for block and at true size. What lies buried shows through the ground as an x-ray.</p></div>
-<div class="card"><h3>The Nether, too</h3><p>Lava seas, fortresses and bastions. One tap dives straight down to the spot a portal would lead to.</p></div>
-<div class="card"><h3>Follows you live</h3><p>Connect your game and the map rides with you like a navigation system. See <a href="support.html#live">how to set it up</a>.</p></div>
-</section>
+
+<section class="feature" id="map" style="--tone:var(--moss)"><div class="wrap">
+<div class="copy">
+<p class="over rise"><i class="cube" style="--c:var(--moss)"></i>The map</p>
+<h2 class="rise" style="--i:1">From the whole world down to a single block.</h2>
+<p class="rise" style="--i:2">Every zoom is the real terrain, in blocks and at its true heights: continents from high up, then hills, rivers and woods, then the very block you would stand on. Each biome keeps its own colours and says its name as you cross it.</p>
+<ul class="facts">
+<li class="rise" style="--i:3"><i class="cube" style="--c:var(--moss)"></i><span>Birds cross the view, animals graze, villagers walk their villages.</span></li>
+<li class="rise" style="--i:4"><i class="cube" style="--c:var(--moss)"></i><span>Nothing pops in. The land rises, trees grow, a new seed reshapes the old world.</span></li>
+<li class="rise" style="--i:5"><i class="cube" style="--c:var(--moss)"></i><span>Type a number or a phrase, roll a seed at random, or carry on where you left off.</span></li>
+</ul>
+</div>
+<div class="pair">
+<figure class="phone rise"><div class="body"><div class="screen" style="background-image:url(img/zoom.jpg)"><video data-src="video/zoom.mp4" poster="img/zoom.jpg" muted playsinline preload="none" aria-label="The map flies from the whole world down into a cherry grove"></video></div></div></figure>
+<figure class="phone rise" style="--i:2"><div class="body"><div class="screen" style="background-image:url(img/reseed.jpg)"><video data-src="video/reseed.mp4" poster="img/reseed.jpg" muted playsinline preload="none" aria-label="A new seed: the old world reshapes into the new one"></video></div></div></figure>
+</div>
+</div></section>
+
+<section class="feature flip" id="places" style="--tone:var(--torch)"><div class="wrap">
+<div class="copy">
+<p class="over rise"><i class="cube" style="--c:var(--torch)"></i>Places</p>
+<h2 class="rise" style="--i:1">Find anything. One tap flies you there.</h2>
+<p class="rise" style="--i:2">Open Places, choose what you are looking for and tap Nearest. The map shows only those, says how many are in view, and steps on to the next one. Every place comes with its coordinates, ready to copy.</p>
+<ul class="chips rise" style="--i:3">
+<li>Villages</li><li>Strongholds</li><li>Ancient cities</li><li>Trial chambers</li><li>Woodland mansions</li><li>Ocean monuments</li><li>Pillager outposts</li><li>Desert temples</li><li>Jungle temples</li><li>Witch huts</li><li>Igloos</li><li>Shipwrecks</li><li>Ocean ruins</li><li>Buried treasure</li><li>Trail ruins</li><li>Ruined portals</li><li>Nether fortresses</li><li>Bastions</li>
+</ul>
+</div>
+<div class="pair">
+<figure class="phone rise"><div class="body"><div class="screen" style="background-image:url(img/places.jpg)"><video data-src="video/places.mp4" poster="img/places.jpg" muted playsinline preload="none" aria-label="The Places panel opens: every kind of structure, with how many are in view"></video></div></div></figure>
+<figure class="phone rise" style="--i:2"><div class="body"><div class="screen" style="background-image:url(img/find.jpg)"><video data-src="video/find.mp4" poster="img/find.jpg" muted playsinline preload="none" aria-label="The map flies to the nearest village and shows its coordinates"></video></div></div></figure>
+</div>
+</div></section>
+
+<section class="feature" id="built" style="--tone:#c9b48a"><div class="wrap">
+<div class="copy">
+<p class="over rise"><i class="cube" style="--c:#c9b48a"></i>Structures</p>
+<h2 class="rise" style="--i:1">Built as the game builds them.</h2>
+<p class="rise" style="--i:2">No pins on a flat map. Every structure stands there as a 3D model, block for block and at its true size: a mansion with all its rooms, a village with its houses and the people who live in them.</p>
+<ul class="facts">
+<li class="rise" style="--i:3"><i class="cube" style="--c:#c9b48a"></i><span>They rise out of the ground as you come close, and sink back as you leave.</span></li>
+<li class="rise" style="--i:4"><i class="cube" style="--c:#c9b48a"></i><span>To build them exactly, Seedlands uses the game's own building pieces. It fetches them from Mojang only if you confirm that you own Minecraft and accept its licence.</span></li>
+</ul>
+</div>
+<figure class="phone rise"><div class="body"><div class="screen" style="background-image:url(img/mansion.jpg)"><video data-src="video/mansion.mp4" poster="img/mansion.jpg" muted playsinline preload="none" aria-label="The map flies in on a woodland mansion, built block for block"></video></div></div></figure>
+</div></section>
+
+<section class="feature flip paper" id="buried" style="--tone:var(--scan)"><div class="wrap">
+<div class="copy">
+<p class="over rise"><i class="cube" style="--c:var(--scan)"></i>X-ray</p>
+<h2 class="rise" style="--i:1">What is buried shows through the ground.</h2>
+<p class="rise" style="--i:2">Strongholds, ancient cities, trial chambers, trail ruins and buried treasure lie under the land as a cool blue scan. Come closer and you look into their rooms, with chests, spawners and portal frames picked out in their own colours.</p>
+</div>
+<figure class="phone rise"><div class="body"><div class="screen" style="background-image:url(img/scan.jpg)"><video data-src="video/scan.mp4" poster="img/scan.jpg" muted playsinline preload="none" aria-label="The map comes down on an ancient city, seen as an x-ray through the mountain"></video></div></div></figure>
+</div></section>
+
+<div class="strata" aria-hidden="true">
+<div style="--c:#3b6f4f"><span>Y 63 · Sea level</span></div>
+<div style="--c:#5b4433"><span></span></div>
+<div style="--c:#565a63"><span>Y 0 · Deepslate</span></div>
+<div style="--c:#33363e"><span></span></div>
+<div style="--c:#16171b"><span>Y −64 · Bedrock</span></div>
+<div style="--c:#191226"><span>Between the worlds</span></div>
+<div style="--c:#3d1512"><span>Y 127 · The Nether's roof</span></div>
+<i class="eye"></i>
+</div>
+
+<section class="feature nether" id="nether" style="--tone:var(--lava)"><div class="wrap">
+<div class="copy">
+<p class="over rise"><i class="cube" style="--c:var(--ember)"></i>The Nether</p>
+<h2 class="rise" style="--i:1">Then straight down, into the Nether.</h2>
+<p class="rise" style="--i:2">One tap dives from the Overworld through rock and bedrock, down the dark between the worlds, and comes out over the very spot a portal would lead to. Down there: lava seas, fortresses, bastions and ruined portals, on one calm map.</p>
+<ul class="facts">
+<li class="rise" style="--i:3"><i class="cube" style="--c:var(--ember)"></i><span>Every spot comes with its matching coordinates in the other dimension.</span></li>
+<li class="rise" style="--i:4"><i class="cube" style="--c:var(--ember)"></i><span>The same key brings you back up, by the same way.</span></li>
+</ul>
+</div>
+<div class="pair">
+<figure class="phone rise"><div class="body"><div class="screen" style="background-image:url(img/dive.jpg)"><video data-src="video/dive.mp4" poster="img/dive.jpg" muted playsinline preload="none" aria-label="The dive: down a shaft through the Overworld's layers and out over the Nether's lava"></video></div></div></figure>
+<figure class="phone rise" style="--i:2"><div class="body"><div class="screen" style="background-image:url(img/nether.jpg)"><video data-src="video/nether.mp4" poster="img/nether.jpg" muted playsinline preload="none" aria-label="A Nether fortress over a sea of lava"></video></div></div></figure>
+</div>
+</div></section>
+
+<section class="feature flip" id="live" style="--tone:#d9d2c3"><div class="wrap">
+<div class="copy">
+<p class="over rise"><i class="cube" style="--c:var(--paper)"></i>Live mode</p>
+<h2 class="rise" style="--i:1">Play, and the map rides along.</h2>
+<p class="rise" style="--i:2">Connect Minecraft: Java Edition and the map follows you like a navigation system. It turns with your view and moves as you move, comes closer while you stand and stands off the faster you go. How close it rides is yours to choose.</p>
+<ul class="facts">
+<li class="rise" style="--i:3"><i class="cube" style="--c:var(--paper)"></i><span>You, in 3D, exactly where the game has you.</span></li>
+<li class="rise" style="--i:4"><i class="cube" style="--c:var(--paper)"></i><span>Take the map with a finger whenever you like. One tap sets it following you again.</span></li>
+</ul>
+<div class="keys rise" style="--i:5"><a class="key" href="mod.html">Get the mod</a><a class="key stone" href="support.html#live">How to set it up</a></div>
+</div>
+<figure class="phone rise"><div class="body"><div class="screen" style="background-image:url(img/live.jpg)"><video data-src="video/live.mp4" poster="img/live.jpg" muted playsinline preload="none" aria-label="The map follows a player walking through a village"></video></div></div></figure>
+</div></section>
+
+<section class="feature paper" id="inside" style="--tone:#2f6fd0"><div class="wrap">
+<div class="copy">
+<p class="over rise"><i class="cube" style="--c:var(--scan)"></i>Live, underground</p>
+<h2 class="rise" style="--i:1">Inside a buried structure, its plan becomes the map.</h2>
+<p class="rise" style="--i:2">Walk into an ancient city, a stronghold, trial chambers or trail ruins, and the land above you lifts away block by block. What is left is the structure's plan, and it paints in where you have already been.</p>
+<ul class="facts">
+<li class="rise" style="--i:3"><i class="cube" style="--c:var(--scan)"></i><span>Each seed remembers where you have walked, and keeps it in your iCloud. Start over whenever you like.</span></li>
+<li class="rise" style="--i:4"><i class="cube" style="--c:var(--scan)"></i><span>When a shrieker goes off, the Warden's warnings count down over the bar.</span></li>
+</ul>
+<div class="warden rise" style="--i:5" role="img" aria-label="As in the app: Warden warning 2 of 4. One less in 9 minutes 41 seconds.">
+<span class="marks"><i class="lit"></i><i class="lit"></i><i></i><i></i></span>
+<span class="say"><b>Warden warning <span class="count">2</span> of 4</b><small>One less in <span class="time">9:41</span></small></span>
+</div>
+</div>
+<figure class="phone rise"><div class="body"><div class="screen" style="background-image:url(img/plan.jpg)"><video data-src="video/plan.mp4" poster="img/plan.jpg" muted playsinline preload="none" aria-label="A player goes into an ancient city: the land dissolves and the city's plan becomes the map"></video></div></div></figure>
+</div></section>
+
+<section class="mod" id="mod"><div class="wrap"><div class="panel slab rise">
+<div>
+<p class="over"><i class="cube" style="--c:var(--torch)"></i>Seedlands Link · the mod</p>
+<h2>One small mod. Nothing to type.</h2>
+<p class="say">Seedlands Link is the free companion mod for Minecraft: Java Edition. With it your game finds Seedlands on your Wi‑Fi by itself: no addresses, no passwords, no account.</p>
+<div class="keys">
+<a class="key" href="mod/seedlands-link-1.1.0.jar" download><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10m0 0 4-4m-4 4-4-4M4 16.5h12"/></svg>Download Seedlands Link</a>
+<a class="key stone" href="mod.html">All about the mod</a>
+</div>
+<p class="meta"><span>Version 1.1.0</span><span>62 KB</span><span>Fabric</span><span>Minecraft: Java Edition 26.1 or newer</span></p>
+</div>
+<ol class="steps">
+<li><div>Install <a href="https://fabricmc.net/use/installer/">Fabric Loader</a> for your version of the game.</div></li>
+<li><div>Put <strong>Seedlands Link</strong> into your game's <code>mods</code> folder and start the game.</div></li>
+<li><div>On your iPhone or iPad, on the same Wi‑Fi, open Seedlands and tap the walking figure at the top right.</div></li>
+<li><div>When the key lights up, tap it. The map takes your game's version and seed, and follows you.</div></li>
+</ol>
+<div class="well"><p><strong>What it tells, and to whom.</strong> Seedlands Link runs on your computer only and talks to Seedlands on your own network. It tells the app your player name and the game's version, the name of the world or server you are in, where you stand, which way you look, which dimension you are in and, in single-player, the world's seed and how often a shrieker has warned the Warden of you. Nothing leaves your network.</p></div>
+</div></div></section>
+
+<section class="more" id="more"><div class="wrap">
+<p class="over rise"><i class="cube" style="--c:var(--paper)"></i>And the rest</p>
+<h2 class="rise" style="--i:1;margin-top:20px">Small things, done properly.</h2>
+<div class="cards">
+<div class="card slab rise"><h3><i class="cube" style="--c:var(--torch)"></i>Coordinates, both ways</h3><p>Touch and hold anywhere for X, Y and Z and the biome. Type or paste coordinates to fly there. Overworld and Nether are converted for you.</p></div>
+<div class="card slab rise" style="--i:1"><h3><i class="cube" style="--c:var(--moss)"></i>Java and Bedrock</h3><p>Java Edition from 1.18.2 to 26.3, Bedrock Edition from 1.18 to 26.60. Choose the version your world was made in.</p></div>
+<div class="card slab rise" style="--i:2"><h3><i class="cube" style="--c:var(--scan)"></i>Back where you left it</h3><p>Put the app away and open it again: the map is there on the first frame, exactly where you were.</p></div>
+<div class="card slab rise"><h3><i class="cube" style="--c:var(--paper)"></i>Nothing collected</h3><p>No account, no ads, no tracking. Everything the map shows is worked out on your device, from the seed. <a href="privacy.html">Privacy</a></p></div>
+<div class="card slab rise" style="--i:1"><h3><i class="cube" style="--c:var(--ember)"></i>iPhone and iPad</h3><p>Made for both, with smooth motion at up to 120 Hz.</p></div>
+<div class="card slab rise" style="--i:2"><h3><i class="cube" style="--c:#c9b48a"></i>Help, from a person</h3><p>Something doesn't match your world? <a href="support.html">Support</a> has the answers, and every message is read.</p></div>
+</div>
+</div></section>
+
+<section class="cta" id="get"><div class="wrap">
+<div class="pit rise" aria-hidden="true"><i style="--in:13%;--c:linear-gradient(135deg,#4a5261,#333945);--d:6;--n:1"></i><i style="--in:25%;--c:linear-gradient(135deg,#2a2e39,#1b1e26);--d:13;--n:2"></i><i style="--in:36%;--c:linear-gradient(135deg,#191b22,#0f1014);--d:21;--n:3"></i><i style="--in:44.5%;--d:30;--n:4"></i></div>
+<h2 class="rise">See your world before you set foot in it.</h2>
+<p class="rise" style="--i:1">Seedlands, for iPhone and iPad.</p>
+<div class="keys rise" style="--i:2">
+<a class="key soon" href="https://apps.apple.com/app/id6832922834">Coming to the App Store</a>
+<a class="key stone" href="mod.html">Get the mod</a>
+</div>
+</div></section>
 </main>
-<footer><div class="wrap wide"><p>Seedlands is an independent app. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</p><p><a href="support.html">Support</a> · <a href="privacy.html">Privacy</a> · <a href="open-source.html">Open source</a> · © 2026 Erik Muffler</p></div></footer>
+
+<footer><div class="wrap"><p>Seedlands is an independent app. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</p><p><a href="mod.html">The mod</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a> · <a href="open-source.html">Open source</a> · © 2026 Erik Muffler</p></div></footer>
+
+<nav class="rail slab" aria-label="On this page">
+<a href="#map"><span>The map</span><i></i></a>
+<a href="#places"><span>Places</span><i></i></a>
+<a href="#built"><span>Structures</span><i></i></a>
+<a href="#buried"><span>X-ray</span><i></i></a>
+<a href="#nether"><span>The Nether</span><i></i></a>
+<a href="#live"><span>Live mode</span><i></i></a>
+<a href="#mod"><span>The mod</span><i></i></a>
+</nav>
 </body></html>

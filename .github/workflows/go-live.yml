@@ -1,4 +1,4 @@
-# Once an hour: is Seedlands on the App Store yet? When it is, the home page's key is
+# Once an hour: is Seedlands on the App Store yet? When it is, the key on the site is
 # changed to lead there, and this workflow switches itself off. See .github/go-live.py.
 name: Go live with the App Store
 on:

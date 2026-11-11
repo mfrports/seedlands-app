@@ -2,22 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Support – Seedlands</title>
 <meta name="description" content="Help with Seedlands, the 3D seed map for Minecraft: finding your seed, matching your world, and setting up live mode.">
 <meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0c0b0d">
 <link rel="icon" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/icon.png">
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.className="js";setTimeout(function(){if(!window.seedlands)document.documentElement.className=""},2500)</script>
+<script src="site.js" defer></script>
 </head>
 <body>
-<div class="wrap wide"><header class="bar"><a class="brand" href="./"><img src="img/icon.png" alt="">Seedlands</a><nav><a href="support.html" aria-current="page">Support</a><a href="privacy.html">Privacy</a></nav></header></div>
-<main class="wrap">
-<p class="over" style="margin-top:34px">Support</p>
-<h1 style="margin-top:14px;font-size:40px">Help with Seedlands</h1>
-<p>Something not working, or a map that doesn't match your world? Write to <a href="mailto:info@mfrports.com">info@mfrports.com</a>, or <a href="https://github.com/mfrports/seedlands-app/issues/new">open an issue on GitHub</a> (a free account is needed). Every message is read. Please say which edition and version you play, and the seed if you can share it.</p>
-<p>Seedlands is made by Erik Muffler, who is responsible for it and answers at that address.</p>
+<header class="top"><div class="bar slab">
+<a class="brand" href="./"><img src="img/icon.png" alt="" width="34" height="34"><span>Seedlands</span></a>
+<nav><a class="wide" href="./#map">Features</a><a class="wide" href="./#live">Live mode</a><a href="support.html" aria-current="page">Support</a><a class="key small" href="mod.html">Get the mod</a></nav>
+</div></header>
 
-<h2>Your world</h2>
+<main class="doc">
+<p class="over rise"><i class="cube" style="--c:#c9b48a"></i>Support</p>
+<h1 class="rise" style="--i:1">Help with Seedlands</h1>
+<p class="rise" style="--i:2">Something not working, or a map that doesn't match your world? Write to <a href="mailto:info@mfrports.com">info@mfrports.com</a>, or <a href="https://github.com/mfrports/seedlands-app/issues/new">open an issue on GitHub</a> (a free account is needed). Every message is read. Please say which edition and version you play, and the seed if you can share it.</p>
+<p class="rise" style="--i:3">Seedlands is made by Erik Muffler, who is responsible for it and answers at that address.</p>
+
+<nav class="jump rise" style="--i:4" aria-label="On this page"><a class="key stone small" href="#world">Your world</a><a class="key stone small" href="#finding">Finding things</a><a class="key stone small" href="#live">Live mode</a></nav>
+
+<h2 id="world">Your world</h2>
 <h3>Where do I find my seed?</h3>
 <p><strong>Java Edition:</strong> type <code>/seed</code> in the game's chat. <strong>Bedrock Edition:</strong> open the world's settings; the seed is listed under Game. On a server, ask whoever runs it.</p>
 <h3>The map doesn't match my world</h3>
@@ -26,27 +36,44 @@
 <p>Java Edition 1.18.2 up to 26.3, and Bedrock Edition 1.18 up to 26.60. The Overworld and the Nether are mapped; the End is not yet.</p>
 <h3>Why does Seedlands ask whether I own Minecraft?</h3>
 <p>To show structures exactly as the game builds them, Seedlands fetches the game's own building pieces from Mojang's servers, once per version. Those files are Mojang's, and the licence to download them comes with the game. So Seedlands asks first, and fetches them only if you confirm that you own Minecraft and accept its licence. If you say <strong>Not now</strong>, the map works all the same, with Seedlands' own models; any structure's card offers the choice again.</p>
+<h3>What does a world remember, and how do I start it over?</h3>
+<p>Where you have walked inside buried structures in live mode is kept with the seed, on your device and in your iCloud, so it is still there on your other devices and after a fresh install. To wipe it, open the seed sheet (tap the seed at the bottom) and tap <strong>Start over</strong> under the seed. <strong>Undo</strong> takes that back for as long as the sheet stays open.</p>
 
-<h2>Finding things</h2>
+<h2 id="finding">Finding things</h2>
 <h3>How do I find the nearest village, stronghold or ancient city?</h3>
 <p>Tap <strong>Places</strong>, choose what you are looking for, and tap <strong>Nearest</strong>. The card shows its coordinates, and the arrows step on to the next ones.</p>
 <h3>What are the blue shapes in the ground?</h3>
 <p>Buried structures, shown as an x-ray: strongholds, ancient cities, trial chambers, trail ruins and buried treasure. Come closer and you can look into their rooms.</p>
 <h3>How do I get coordinates?</h3>
 <p>Touch and hold anywhere on the map for X, Y and Z, and the matching spot in the other dimension. Tap the readout at the top left to type or paste coordinates and fly there.</p>
+<h3>How do I get to the Nether, and back?</h3>
+<p>Tap the key with the arrow at the top right. The map dives down to the spot a portal would lead to; the same key brings you back up. A tap during the dive hurries it along.</p>
 
 <h2 id="live">Live mode</h2>
 <p>In live mode the map follows you while you play: it turns with your view and moves as you move.</p>
-<h3>Java Edition (26.1 or newer)</h3>
-<ol>
-<li>Install <a href="https://fabricmc.net/use/installer/">Fabric Loader</a> for your version of the game.</li>
-<li>Download <a href="mod/seedlands-link-1.0.0.jar">Seedlands Link</a> and put the file in your game's <code>mods</code> folder.</li>
-<li>Start the game. On your iPhone or iPad, on the same Wi-Fi, open Seedlands and tap the walking figure at the top right. Allow the local network when iOS asks.</li>
-<li>When the key lights up, tap it. The map takes your game's version and seed, and follows you.</li>
+<div class="panel slab">
+<p class="over"><i class="cube" style="--c:var(--torch)"></i>Seedlands Link · the mod</p>
+<h2>For Java Edition, 26.1 or newer</h2>
+<ol class="steps">
+<li><div>Install <a href="https://fabricmc.net/use/installer/">Fabric Loader</a> for your version of the game.</div></li>
+<li><div>Download <a href="mod/seedlands-link-1.1.0.jar" download>Seedlands Link</a> and put the file in your game's <code>mods</code> folder.</div></li>
+<li><div>Start the game. On your iPhone or iPad, on the same Wi‑Fi, open Seedlands and tap the walking figure at the top right. Allow the local network when iOS asks.</div></li>
+<li><div>When the key lights up, tap it. The map takes your game's version and seed, and follows you.</div></li>
 </ol>
-<div class="well"><p>Seedlands Link runs on your computer only and talks to Seedlands on your own network. It tells the app where you stand, which way you look, which dimension you are in and, in single-player, the world's seed. Nothing leaves your network.</p></div>
+<div class="keys"><a class="key" href="mod/seedlands-link-1.1.0.jar" download><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10m0 0 4-4m-4 4-4-4M4 16.5h12"/></svg>Download Seedlands Link</a><a class="key stone" href="mod.html">All about the mod</a></div>
+</div>
+<div class="well"><p>Seedlands Link runs on your computer only and talks to Seedlands on your own network. It tells the app your player name and the game's version, the name of the world or server you are in, where you stand, which way you look, which dimension you are in and, in single-player, the world's seed and how often a shrieker has warned the Warden of you. Nothing leaves your network.</p></div>
 <h3>The key doesn't light up</h3>
-<p>Both devices must be on the same Wi-Fi, and Seedlands needs the Local Network permission (Settings › Privacy &amp; Security › Local Network). Guest networks and some routers keep devices from seeing each other.</p>
+<p>Both devices must be on the same Wi‑Fi, and Seedlands needs the Local Network permission (Settings › Privacy &amp; Security › Local Network). Guest networks and some routers keep devices from seeing each other.</p>
+<h3>The map stopped following me</h3>
+<p>Any touch on the map takes it back, so you can look around. The key at the top right lights up with an arrow pointing to you: one tap, and the map follows you again.</p>
+<h3>How do I choose how close the map rides?</h3>
+<p>Open the Live panel (the key at the top right) and turn the dial. The map still comes closer while you stand and stands off as you go faster.</p>
+<h3>What happens inside a buried structure?</h3>
+<p>Walk into an ancient city, a stronghold, trial chambers or trail ruins while the map follows you, and the land above lifts away: the structure's plan becomes the map, and it paints in where you have been. This needs the game's own building pieces (see <em>Why does Seedlands ask whether I own Minecraft?</em>).</p>
+<h3>What is the Warden's count?</h3>
+<p>Once a shrieker has gone off for you, a note over the bar says how many warnings stand (the Warden comes at the fourth) and counts down to the next one being forgotten: ten minutes of game time without a new one. Only the world itself knows that count, so it shows in single-player with the mod, and on a server you connected through its console.</p>
 </main>
-<footer><div class="wrap wide"><p>Seedlands is an independent app. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</p><p><a href="support.html">Support</a> · <a href="privacy.html">Privacy</a> · <a href="open-source.html">Open source</a> · © 2026 Erik Muffler</p></div></footer>
+
+<footer><div class="wrap"><p>Seedlands is an independent app. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</p><p><a href="mod.html">The mod</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a> · <a href="open-source.html">Open source</a> · © 2026 Erik Muffler</p></div></footer>
 </body></html>
