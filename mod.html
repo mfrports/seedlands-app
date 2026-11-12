@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-store="soon">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -12,82 +12,17 @@
 <meta property="og:description" content="The free companion mod for Minecraft: Java Edition. Your game finds Seedlands on your Wi‑Fi by itself, and the map follows you while you play.">
 <meta property="og:image" content="https://mfrports.github.io/seedlands-app/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="img/favicon.png">
-<link rel="apple-touch-icon" href="img/icon.png">
-<link rel="stylesheet" href="style.css">
-<script>document.documentElement.className="js";setTimeout(function(){if(!window.seedlands)document.documentElement.className=""},2500)</script>
-<script src="site.js" defer></script>
+<link rel="icon" href="./img/favicon.png">
+<link rel="apple-touch-icon" href="./img/icon.png">
+<script>document.documentElement.classList.add("js");setTimeout(function(){if(!window.seedlands)document.documentElement.classList.remove("js")},4000)</script>
+  <script type="module" crossorigin src="./assets/mod-DRxnAjHl.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/Nav-Dqhb_S6z.js">
+  <link rel="modulepreload" crossorigin href="./assets/Closing-By_q1FUx.js">
+  <link rel="modulepreload" crossorigin href="./assets/Clip-D8DxRjK1.js">
+  <link rel="modulepreload" crossorigin href="./assets/Doc-DosbhZ1k.js">
+  <link rel="stylesheet" crossorigin href="./assets/Nav-C8gjQq7X.css">
 </head>
 <body>
-<header class="top"><div class="bar slab">
-<a class="brand" href="./"><img src="img/icon.png" alt="" width="34" height="34"><span>Seedlands</span></a>
-<nav><a class="wide" href="./#map">Features</a><a class="wide" href="./#live">Live mode</a><a href="support.html">Support</a><a class="key small" href="mod.html" aria-current="page">Get the mod</a></nav>
-</div></header>
-
-<main>
-<section class="modtop"><div class="wrap">
-<div class="copy">
-<p class="over rise"><i class="cube" style="--c:var(--torch)"></i>Seedlands Link · the mod</p>
-<h1 class="rise" style="--i:1">Play, and the map <span class="torch">rides along.</span></h1>
-<p class="lead rise" style="--i:2">Seedlands Link is the free companion mod for Minecraft: Java Edition. With it your game finds Seedlands on your Wi‑Fi by itself and tells it where you are. Nothing to type: no addresses, no passwords, no account.</p>
-<div class="keys rise" style="--i:3">
-<a class="key" href="mod/seedlands-link-1.2.0.jar" download><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10m0 0 4-4m-4 4-4-4M4 16.5h12"/></svg>Download Seedlands Link</a>
-<a class="key stone" href="#setup">Set it up in four steps</a>
-</div>
-<p class="meta rise" style="--i:4"><span>Version 1.2.0</span><span>64 KB</span><span>Fabric</span><span>Minecraft: Java Edition 26.1 or newer</span><span>Free</span></p>
-</div>
-<figure class="phone rise" style="--i:2"><div class="body"><div class="screen" style="background-image:url(img/live.jpg)"><video data-src="video/live.mp4" poster="img/live.jpg" muted playsinline preload="none" aria-label="The map follows a player walking through a village"></video></div></div></figure>
-</div></section>
-
-<div class="doc">
-<h2 id="setup">Set it up</h2>
-<ol class="steps">
-<li><div><strong>Fabric Loader.</strong> Install <a href="https://fabricmc.net/use/installer/">Fabric Loader</a> for your version of the game, if you don't have it yet. Seedlands Link needs nothing else, not even Fabric API.</div></li>
-<li><div><strong>The mod.</strong> <a href="mod/seedlands-link-1.2.0.jar" download>Download Seedlands Link</a> and put the file into your game's <code>mods</code> folder. Start the game with the Fabric profile.</div></li>
-<li><div><strong>The app.</strong> On your iPhone or iPad, on the same Wi‑Fi, open Seedlands and tap the walking figure at the top right. Allow the local network when iOS asks.</div></li>
-<li><div><strong>One tap.</strong> When the key lights up, tap it. The map takes your game's version and seed, and follows you.</div></li>
-</ol>
-<div class="well"><p><strong>Where is the mods folder?</strong> In the Minecraft Launcher, open Installations, point at your Fabric installation and click the folder. The <code>mods</code> folder is in there; make it if it is missing.</p></div>
-
-<h2>What you get</h2>
-<ul>
-<li><strong>The map follows you</strong> like a navigation system: it turns with your view and moves as you move, comes closer while you stand and stands off the faster you go.</li>
-<li><strong>You, in 3D,</strong> exactly where the game has you, and as you get about: on foot, gliding, in a boat or a minecart, on a horse, a pig, a camel or a strider, swimming and diving. Under the ground or in another dimension you stand on the map as a figure of light.</li>
-<li><strong>Your worlds, by name.</strong> In single-player the map takes each world's seed and the name you gave it, and changes with you when you leave one world for another.</li>
-<li><strong>Inside a structure, its plan becomes the map,</strong> and paints in where you have already been.</li>
-<li><strong>The Warden's warnings count down</strong> over the bar once a shrieker has gone off (single-player).</li>
-<li><strong>The map is still yours.</strong> Any touch takes it; one tap sets it following you again.</li>
-</ul>
-
-<h2 id="tells">What it tells, and to whom</h2>
-<div class="well"><p>Seedlands Link runs on your computer only and talks to Seedlands on your own network. It tells the app your player name and the game's version, the name of the world or server you are in, where you stand, which way you look, which dimension you are in, what you ride, your pose (such as swimming or gliding), whether you are in the water and, in single-player, the world's seed and how often a shrieker has warned the Warden of you. <strong>Nothing leaves your network.</strong></p></div>
-<p>The mod looks for Seedlands on the local network by itself, the way a printer is found. Nothing is followed and no world is changed in the app until you tap the key there. More in <a href="privacy.html">Privacy</a>.</p>
-
-<h2>Good to know</h2>
-<h3>Does it work on a server?</h3>
-<p>Yes. The mod runs in your own game, so the server needs nothing. The map follows you just the same. Only the world's seed, its name and the Warden's warnings are the server's to know: there you enter the seed in Seedlands yourself, and the count is not shown.</p>
-<h3>Does it change my game?</h3>
-<p>No. It adds no blocks, items or commands and changes nothing in your world. It only reads where you are.</p>
-<h3>Which versions?</h3>
-<p>Minecraft: Java Edition 26.1 or newer, with Fabric Loader 0.18 or newer. Seedlands itself maps Java Edition from 1.18.2 and Bedrock Edition from 1.18; live mode with the mod is for Java Edition.</p>
-<h3>Updating</h3>
-<p>Put the new file into the <code>mods</code> folder, remove the older <code>seedlands-link</code> file, and start the game again.</p>
-<h3>What is new in 1.2.0?</h3>
-<p>It tells Seedlands how you get about (what you ride, whether you swim, dive or glide), so your figure on the map does the same. And it keeps talking when you leave a world: versions up to 1.1.0 went silent then, and the map stood still until the game was started again. If live mode stops after you change worlds, this update is the cure.</p>
-<h3>The key doesn't light up</h3>
-<p>Both devices must be on the same Wi‑Fi, and Seedlands needs the Local Network permission (Settings › Privacy &amp; Security › Local Network). Guest networks and some routers keep devices from seeing each other. Still dark? <a href="support.html">Support</a> can help.</p>
-<h3>Is this the file I think it is?</h3>
-<p>seedlands-link-1.2.0.jar, 63,503 bytes. SHA-256:</p>
-<p class="sum">9219f6dc20f06b0225c96f8f57972aa1fac55c5f4f07b0790fdea41a931a8a2e</p>
-
-<div class="panel slab rise">
-<p class="over"><i class="cube" style="--c:var(--moss)"></i>The app</p>
-<h2>Seedlands, for iPhone and iPad.</h2>
-<p>Any seed, mapped in 3D. The mod is its companion; the map works without it.</p>
-<div class="keys"><a class="key soon" href="https://apps.apple.com/app/id6832922834">Coming to the App Store</a><a class="key stone" href="./">See what it does</a></div>
-</div>
-</div>
-</main>
-
-<footer><div class="wrap"><p>Seedlands is an independent app. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</p><p><a href="mod.html">The mod</a> · <a href="support.html">Support</a> · <a href="privacy.html">Privacy</a> · <a href="open-source.html">Open source</a> · © 2026 Erik Muffler</p></div></footer>
-</body></html>
+<div id="root"><link rel="preload" as="image" href="img/icon.png"/><header class="pointer-events-none fixed inset-x-0 top-0 z-50 pt-3 sm:pt-4"><div class="wrap"><div class="nav slab pointer-events-auto flex h-[58px] items-center justify-between gap-3 !rounded-[20px] pl-3 pr-2.5"><a href="./" class="flex items-center gap-2.5 rounded-xl pr-2 text-[17px] font-[750] tracking-[-0.02em] text-paper no-underline"><img src="img/icon.png" alt="" width="34" height="34" class="rounded-[23%]" style="box-shadow:0 3px 0 #050405"/><span>Seedlands</span></a><nav class="flex items-center gap-1 text-[15px] font-[600]" aria-label="Seedlands"><a class="navlink hidden md:inline-flex" href="./#map">Features</a><a class="navlink hidden md:inline-flex" href="./#live">Live mode</a><a class="navlink max-[429px]:hidden" href="support.html">Support</a><a class="key torch small ml-1.5" href="mod.html">Get the mod</a></nav></div></div></header><main class="doc-page "><section class="wrap modtop"><div><p class="over " data-rise="" style="--i:0"><i class="cube " style="--c:var(--color-torch)" aria-hidden="true"></i>Seedlands Link · the mod</p><h1 class="headline mt-5" data-lines=""><span class="line" style="--i:0"><span>Play, and the map</span> </span><span class="line" style="--i:1"><span><span class="text-torch">rides along.</span></span></span></h1><p class="lead mt-6 max-w-[35rem]" data-rise="" style="--i:2">Seedlands Link is the free companion mod for Minecraft: Java Edition. With it your game finds Seedlands on your Wi‑Fi by itself and tells it where you are. Nothing to type: no addresses, no passwords, no account.</p><div class="mt-8 flex flex-wrap gap-3.5" data-rise="" style="--i:3"><a class="key torch" href="mod/seedlands-link-1.2.0.jar" download=""><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10m0 0l-4.2-4.2M10 13l4.2-4.2M4 17h12"></path></svg>Download Seedlands Link</a><a class="key" href="#setup">Set it up in four steps</a></div><p class="meta" data-rise="" style="--i:4"><span>Version <!-- -->1.2.0</span><span>64 KB</span><span>Fabric</span><span>Minecraft: Java Edition 26.1 or newer</span><span>Free</span></p></div><div class="modtop-phone" data-rise="" style="--i:2"><div class="phone "><div class="phone-body"><div class="phone-screen"><div class="clip" style="background-image:url(img/live.jpg)" role="img" aria-label="The map follows a player walking through a village"></div></div></div></div></div></section><div class="wrap doc doc-body"><h2 id="setup">Set it up</h2><ol class="steps"><li><span class="digits step-n">1</span><div><strong>Fabric Loader.</strong> Install <a href="https://fabricmc.net/use/installer/">Fabric Loader</a> for your version of the game, if you don’t have it yet. Seedlands Link needs nothing else, not even Fabric API.</div></li><li><span class="digits step-n">2</span><div><strong>The mod.</strong> <a href="mod/seedlands-link-1.2.0.jar" download="">Download Seedlands Link</a> and put the file into your game’s <code>mods</code> folder. Start the game with the Fabric profile.</div></li><li><span class="digits step-n">3</span><div><strong>The app.</strong> On your iPhone or iPad, on the same Wi‑Fi, open Seedlands and tap the walking figure at the top right. Allow the local network when iOS asks.</div></li><li><span class="digits step-n">4</span><div><strong>One tap.</strong> When the key lights up, tap it. The map takes your game’s version and seed, and follows you.</div></li></ol><div class="well note"><p><strong>Where is the mods folder?</strong> In the Minecraft Launcher, open Installations, point at your Fabric installation and click the folder. The <code>mods</code> folder is in there; make it if it is missing.</p></div><h2>What you get</h2><ul><li><strong>The map follows you</strong> like a navigation system: it turns with your view and moves as you move, comes closer while you stand and stands off the faster you go.</li><li><strong>You, in 3D,</strong> exactly where the game has you, and as you get about: on foot, gliding, in a boat or a minecart, on a horse, a pig, a camel or a strider, swimming and diving. Under the ground or in another dimension you stand on the map as a figure of light.</li><li><strong>Your worlds, by name.</strong> In single-player the map takes each world’s seed and the name you gave it, and changes with you when you leave one world for another.</li><li><strong>Inside a structure, its plan becomes the map,</strong> and paints in where you have already been.</li><li><strong>The Warden’s warnings count down</strong> over the bar once a shrieker has gone off (single-player).</li><li><strong>The map is still yours.</strong> Any touch takes it; one tap sets it following you again.</li></ul><h2 id="tells">What it tells, and to whom</h2><div class="well note"><p>Seedlands Link runs on your computer only and talks to Seedlands on your own network. It tells the app your player name and the game’s version, the name of the world or server you are in, where you stand, which way you look, which dimension you are in, what you ride, your pose (such as swimming or gliding), whether you are in the water and, in single-player, the world’s seed and how often a shrieker has warned the Warden of you.<!-- --> <strong>Nothing leaves your network.</strong></p></div><p>The mod looks for Seedlands on the local network by itself, the way a printer is found. Nothing is followed and no world is changed in the app until you tap the key there. More in <a href="privacy.html">Privacy</a>.</p><h2>Good to know</h2><h3>Does it work on a server?</h3><p>Yes. The mod runs in your own game, so the server needs nothing. The map follows you just the same. Only the world’s seed, its name and the Warden’s warnings are the server’s to know: there you enter the seed in Seedlands yourself, and the count is not shown.</p><h3>Does it change my game?</h3><p>No. It adds no blocks, items or commands and changes nothing in your world. It only reads where you are.</p><h3>Which versions?</h3><p>Minecraft: Java Edition 26.1 or newer, with Fabric Loader 0.18 or newer. Seedlands itself maps Java Edition from 1.18.2 and Bedrock Edition from 1.18; live mode with the mod is for Java Edition.</p><h3>Updating</h3><p>Put the new file into the <code>mods</code> folder, remove the older <code>seedlands-link</code> file, and start the game again.</p><h3>What is new in <!-- -->1.2.0<!-- -->?</h3><p>It tells Seedlands how you get about (what you ride, whether you swim, dive or glide), so your figure on the map does the same. And it keeps talking when you leave a world: versions up to 1.1.0 went silent then, and the map stood still until the game was started again. If live mode stops after you change worlds, this update is the cure.</p><h3>The key doesn’t light up</h3><p>Both devices must be on the same Wi‑Fi, and Seedlands needs the Local Network permission (Settings › Privacy &amp; Security › Local Network). Guest networks and some routers keep devices from seeing each other. Still dark? <a href="support.html">Support</a> can help.</p><h3>Is this the file I think it is?</h3><p>seedlands-link-1.2.0.jar<!-- -->, <!-- -->63,503<!-- --> bytes. SHA-256:</p><p class="sum digits">9219f6dc20f06b0225c96f8f57972aa1fac55c5f4f07b0790fdea41a931a8a2e</p><div class="slab apppanel" data-rise="" style="--i:0"><p class="over "><i class="cube " style="--c:var(--color-moss)" aria-hidden="true"></i>The app</p><h2>Seedlands, for iPhone and iPad.</h2><p>Any seed, mapped in 3D. The mod is its companion; the map works without it.</p><div class="mt-7 flex flex-wrap gap-3.5"><span class="hollow store-soon  "><i class="glow" aria-hidden="true"></i>Coming to the App Store</span><a class="key torch store-live  " href="https://apps.apple.com/app/id6832922834">Get Seedlands on the App Store</a><a class="key" href="./">See what it does</a></div></div></div></main><footer class="relative z-10 border-t border-line bg-stone"><div class="wrap flex flex-col gap-8 py-14 md:flex-row md:items-end md:justify-between"><div class="max-w-[560px]"><a href="./" class="inline-flex items-center gap-2.5 text-[17px] font-[750] tracking-[-0.02em] text-paper no-underline"><img src="img/icon.png" alt="" width="30" height="30" class="rounded-[23%]" style="box-shadow:0 3px 0 #050405"/><span>Seedlands</span></a><p class="mt-5 text-[13px] leading-[1.6] text-faint">Seedlands is an independent app. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</p></div><nav class="flex flex-wrap items-center gap-x-6 gap-y-2 text-[14px] text-dim" aria-label="More"><a class="footlink" href="mod.html">The mod</a><a class="footlink" href="support.html">Support</a><a class="footlink" href="privacy.html">Privacy</a><a class="footlink" href="open-source.html">Open source</a><span class="text-faint">© 2026 Erik Muffler</span></nav></div></footer></div>
+</body>
+</html>

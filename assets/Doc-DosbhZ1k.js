@@ -1,0 +1,1 @@
+import{n as e,p as t,r as n,t as r}from"./Nav-Dqhb_S6z.js";var i=t();function a({children:t,wide:a=!1}){return n(),(0,i.jsxs)(i.Fragment,{children:[(0,i.jsx)(r,{}),(0,i.jsx)(`main`,{className:`doc-page ${a?``:`doc`}`,children:t}),(0,i.jsx)(e,{})]})}export{a as t};

@@ -1,33 +1,40 @@
-# Once an hour: is Seedlands on the App Store yet? When it is, the key on the site is
-# changed to lead there, and this workflow switches itself off. See .github/go-live.py.
-name: Go live with the App Store
+# Once an hour: is Seedlands on the App Store? If so, the pages' keys change (go-live.mjs),
+# the change is published, and this workflow switches itself off: its work is done.
+name: Go live
+
 on:
   schedule:
     - cron: "17 * * * *"
   workflow_dispatch:
+
 permissions:
   contents: write
-  actions: write
   pages: write
+  actions: write
+
 jobs:
-  look:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - id: look
-        run: python3 .github/go-live.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - id: ask
+        run: node .github/go-live.mjs
       - name: Publish the change
-        if: steps.look.outputs.changed == 'true'
+        if: steps.ask.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -am "Seedlands is on the App Store: the key leads there"
+          git add -A
+          git commit -m "Seedlands is on the App Store: the keys lead there now"
           git push
           gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
       - name: Done for good
-        if: steps.look.outputs.done == 'true'
+        if: steps.ask.outputs.live == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow disable go-live.yml --repo "${{ github.repository }}"
+        run: gh workflow disable go-live.yml
