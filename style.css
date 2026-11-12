@@ -9,7 +9,7 @@
   --paper: #f6f1e7; --dim: rgba(246, 241, 231, 0.66); --faint: rgba(246, 241, 231, 0.38);
   --line: rgba(246, 241, 231, 0.09);
   --torch: #ffb040; --torch-top: #ffc766; --torch-side: #9e5914; --on-torch: #2b1a08;
-  --sea: #216289; --moss: #3d7a58; --scan: #63b7ff; --ember: #ff7a22; --lava: #e2491a;
+  --sea: #216289; --moss: #3d7a58; --scan: #63b7ff; --ember: #ff7a22; --lava: #e2491a; --endstone: #dcd9a0;
   --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
   --out: cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -158,6 +158,8 @@ html:not(.js) .world::before { background-image: url(img/world-wide.jpg); opacit
 .strata .eye { position: absolute; z-index: 1; left: 50%; top: 0; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 3px; background: var(--paper);
                box-shadow: 0 0 18px 4px rgba(246, 241, 231, 0.45); display: none; }
 .nether { background: linear-gradient(#3d1512, #24100d 16%, #170b0a 55%, var(--stone)); }
+/* The End: the void's dark, a shade of violet in it, between stone and stone. */
+.end { background: linear-gradient(var(--stone), #120d20 22%, #0d0a18 70%, var(--stone)); }
 .paper { background: linear-gradient(var(--stone), rgba(12, 11, 13, 0) 22%, rgba(12, 11, 13, 0) 78%, var(--stone)),
                      linear-gradient(rgba(99, 183, 255, 0.07) 1px, transparent 1px) 50% 0 / 64px 64px, linear-gradient(90deg, rgba(99, 183, 255, 0.07) 1px, transparent 1px) 50% 0 / 64px 64px, #0b1b33; }
 
