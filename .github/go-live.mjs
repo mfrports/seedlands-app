@@ -19,10 +19,13 @@ const SOON = '<html lang="en" data-store="soon">', LIVE = '<html lang="en" data-
 const site = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dry = process.argv.includes('--dry'), pretend = process.argv.includes('--pretend');
 
+// Apple's lookup is kept a day by its cache, by the exact address: asked the same way every
+// hour, a "not there" from before the release was the answer for a day after it (the app was
+// out on 2026-11-12 and the key stayed hollow). So every ask has an address of its own.
 async function listed() {
   for (const country of STOREFRONTS) {
     try {
-      const answer = await (await fetch(`https://itunes.apple.com/lookup?id=${APP}&country=${country}`, { signal: AbortSignal.timeout(20000) })).json();
+      const answer = await (await fetch(`https://itunes.apple.com/lookup?id=${APP}&country=${country}&asked=${Date.now()}`, { signal: AbortSignal.timeout(20000), cache: 'no-store' })).json();
       if (answer.resultCount > 0) return country;
     } catch (error) {
       console.log(`lookup (${country}) failed: ${error.message}`);
